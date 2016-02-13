@@ -446,16 +446,16 @@ Why? Because the `next_more.mustache` file will inherit the `size` and `start` v
 
 
 For example, this template and partial:
+```html+erb
+base.mustache:
+<h2>Names</h2>
+{{#names}}
+  {{> user}}
+{{/names}}
 
-    base.mustache:
-    <h2>Names</h2>
-    {{#names}}
-      {{> user}}
-    {{/names}}
-
-    user.mustache:
-    <strong>{{name}}</strong>
-
+user.mustache:
+<strong>{{name}}</strong>
+```
 Can be thought of as a single, expanded template:
 
 ```html
@@ -479,7 +479,7 @@ Set Delimiter tags start with an equals sign and change the tag delimiters from 
 
 Consider the following contrived example:
 
-```
+```html+erb
 * {{ default_tags }}
 {{=<% %>=}}
 * <% erb_style_tags %>
